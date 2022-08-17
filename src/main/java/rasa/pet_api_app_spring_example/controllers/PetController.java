@@ -34,11 +34,11 @@ public class PetController {
 
     /*UPDATE*/
     @PutMapping(path = "{id}")
-    public void updatePetById(@PathVariable("id") UUID id, @RequestBody Pet pet) {
-        Pet petForUpdate = selectPetById(id);
-        int index = pets.indexOf(pet);
-        if (petForUpdate != null){
-            pets.set(index, pet);
+    public void updatePetById(@PathVariable("id") UUID id, @RequestBody Pet petToUpdate) {
+        Pet pet = selectPetById(id);
+        int indexOfPetToUpdate = pets.indexOf(pet);
+        if (indexOfPetToUpdate >= 0){
+            pets.set(indexOfPetToUpdate, petToUpdate);
             System.out.println(pet.getName() + " was updated successfully.");
         }
         System.out.println("Pet not found.");
