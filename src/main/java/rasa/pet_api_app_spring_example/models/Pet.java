@@ -1,8 +1,7 @@
-package models;
+package rasa.pet_api_app_spring_example.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
 import java.time.LocalDateTime;
 import java.util.UUID;
 
